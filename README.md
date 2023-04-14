@@ -1,1 +1,2 @@
-# Creating-a-Wordpress-Theme
+# Створення теми Wordpress
+#### Відкриваємо Диск(С:), заходимо в нашу папку xampp, потім у папку htdocs та відкриваємо завантажений архів Wordpress.
