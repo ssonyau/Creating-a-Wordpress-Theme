@@ -19,6 +19,6 @@
 
 ![](https://github.com/ssonyau/Creating-a-Wordpress-Theme/blob/main/Screenshot%202023-04-17%20140417.png)
 
-#### 4) Після цього переходимо назад до адмінки, і бачимо, що у нас з'явилася тема, яку ми щойно створили.
+#### 4) Після цього переходимо назад до адмінки, і бачимо, що у нас з'явилася тема, яку ми щойно створили, після цього натискаємо на кнопку Активувати.
 
-![](https://github.com/ssonyau/)
+![](https://github.com/ssonyau/Creating-a-Wordpress-Theme/blob/main/Screenshot%202023-04-17%20141941.png)
