@@ -23,7 +23,7 @@
 #### 4) У файл index.php ми підключимо всі файли нашої теми, і виведемо пости, щоб було цікавіше.
 #### Приклад кода: 
 ```
-<php? get_header(); ?>
+<?php get_header(); ?>
 <main> 
   <div class="content">
 <h1> Main Contents </h1>
@@ -38,7 +38,7 @@
 <?php get_sidebar(); ?> 
 </main> 
 <div class="delimetr"></div> 
-<?php get_fidebar(); 7>
+<?php get_footer(); ?>
 ```
 
 #### 5) Далі розділяємо index.php на окремі файли. Файл index.php містить загальну інформацію про сайт. У ній прописані елементи, які повторюються для кожної сторінки. Для коректної роботи всього вмісту потрібно створити окремі файли для header.php, sidebar.php, footer.php. 
@@ -48,18 +48,19 @@
 #### 6) Далі у файл header.php потрібно виділити та скопіювати рядки, що стосуються заголовка з index.php:
 
 ```
-  <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <title>Document</title>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8"> 
+  <title>Documents</title>
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url');?>"/>
-</head>
+</head> 
 <body>
- <div class="wrapper">
+
+<div class="wrapper"> 
   <header>
-    <h1>Header</h1>
-  </header>
+<h1>Header</h1> 
+</header>
   ```
 #### Це повний вміст header.php. Такі ж дії потрібно зробити з іншими файлами.
 
@@ -73,7 +74,6 @@
  <h2> <?php _e('Archives'); ?></h2>
   <ul>
    <?php wp_get_archives('type-monthly'); ?>
-
 </ul>
  </div>
  ```   
@@ -104,10 +104,11 @@ header{
 main{
     display: flex;
     justify-content: center;
-    height: 70px;
+    height: 70vh;
 }
 
 footer{
+    width: 100%;
     background: blue;
     padding: 40px;
 }
@@ -119,8 +120,8 @@ footer{
  
 #### Після активації ми можемо одразу перейти на сайт.
 
-![](https://github.com/ssonyau/Creating-a-Wordpress-Theme/blob/main/Screenshot%202023-04-17%20142903.png )
+![](https://github.com/ssonyau/Creating-a-Wordpress-Theme/blob/main/Screenshot%202023-04-17%20142903.png)
 
-#### Ось такий простий сайт на Wordpress у нас виходить.
+### Ось такий простий сайт на Wordpress у нас виходить.
 
-![](https://github.com/ssonyau/)
+![](https://github.com/ssonyau/Creating-a-Wordpress-Theme/blob/main/Screenshot%202023-04-17%20142903.png)
