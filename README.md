@@ -120,7 +120,7 @@ footer{
  
 #### Після активації ми можемо одразу перейти на сайт.
 
-![](https://github.com/ssonyau/Creating-a-Wordpress-Theme/blob/main/Screenshot%202023-04-17%20142903.png)
+![](https://github.com/ssonyau/Creating-a-Wordpress-Theme/blob/main/Screenshot%202023-04-20%20161235.png)
 
 ### Ось такий простий сайт на Wordpress у нас виходить.
 
