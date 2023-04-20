@@ -116,11 +116,11 @@ footer{
 
 #### 10) Після цього переходимо назад до адмінки, і бачимо, що у нас з'явилася тема, яку ми щойно створили, після цього натискаємо на кнопку Активувати.
 
-![](https://github.com/ssonyau/Creating-a-Wordpress-Theme/blob/main/Screenshot%202023-04-17%20142401.png)
+![](https://github.com/ssonyau/Creating-a-Wordpress-Theme/blob/main/Screenshot%202023-04-20%20161235.png)
  
 #### Після активації ми можемо одразу перейти на сайт.
 
-![](https://github.com/ssonyau/Creating-a-Wordpress-Theme/blob/main/Screenshot%202023-04-20%20161235.png)
+![](https://github.com/ssonyau/)
 
 ### Ось такий простий сайт на Wordpress у нас виходить.
 
