@@ -3,7 +3,7 @@
 
 ![](https://github.com/ssonyau/Creating-a-Wordpress-Theme/blob/main/Screenshot%202023-04-17%20133319.png)
 
-#### 2) Кожна тема обов'язково містить два файли: index.php і style.css, а також папку images із зображеннями для шаблону. Для початку досить просто створити ці файли в будь-якому текстовому редакторі. у мене ж це блокнот, а потім зайнятися їх наповненням.
+#### 2) Кожна тема обов'язково містить два файли: index.php і style.css, Для початку досить просто створити ці файли в будь-якому текстовому редакторі. у мене ж це блокнот, а потім зайнятися їх наповненням.
 
 ![](https://github.com/ssonyau/Creating-a-Wordpress-Theme/blob/main/Screenshot%202023-04-17%20140002.png)
 
@@ -19,6 +19,60 @@
 
 ![](https://github.com/ssonyau/Creating-a-Wordpress-Theme/blob/main/Screenshot%202023-04-17%20140417.png)
 
+#### 4) У файл index.php додаємо код із простим змістом для теми з шапкою, підвалом, основним постом та сайдбаром.
+#### Приклад кода: 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Мой блог</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div id="header">
+    <div id="logo">
+      <a href="index.html"><img src="images/shapka.png" alt="" title=""/></a>
+    </div>
+    <ul id="menu">
+      <li><a href="#">Главная</a></li>
+      <li><a href="#">О нас</a></li>
+      <li><a href="#">Каталог товаров</a></li>
+      <li><a href="#">Контакты</a></li>
+    </ul>
+  </div>
+  <div id="content-main">
+    
+    <div id="content">
+      <div class="post-content">
+        <div class="post-img"><a href="#"><img width="275" height="230" src="images/mini.jpg" alt="Миниатюра поста"/></a></div>
+        <h1 class="note-title"><a href="#">Заголовок</a></h1>
+        <div class="post-text">Основной текст</div>
+        <div class="readmore"><a href="#">Читать далее</a></div>
+      </div>
+    </div>
+ 
+    <div id="sidebar">
+      <div class="widget-title">Популярное на сайте</div>
+      <div class="widget">
+        <ul>
+          <li><a href="#">Новости</a></li>
+          <li><a href="#">Комментарии</a></li>
+          <li><a href="#">Отзывы</a></li>   
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <p>Копирование информации запрещено</p>
+  </div> 
+</body>
+</html>
+
+#### Також до цього файлу можна додавати будь-які елементи, які вам хотілося б бачити на сайті.
+
+#### 5) Далі розділяємо index.php на окремі файли. Файл index.php містить загальну інформацію про сайт. У ній прописані елементи, які повторюються для кожної сторінки. Для коректної роботи всього вмісту потрібно створити окремі файли для header.php, sidebar.php, footer.php. 
+![](https://github.com/ssonyau/)
+
 #### 4) Після цього переходимо назад до адмінки, і бачимо, що у нас з'явилася тема, яку ми щойно створили, після цього натискаємо на кнопку Активувати.
 
 ![](https://github.com/ssonyau/Creating-a-Wordpress-Theme/blob/main/Screenshot%202023-04-17%20142401.png)
@@ -26,3 +80,4 @@
 #### Після активації ми можемо одразу перейти на сайт.
 
 ![](https://github.com/ssonyau/Creating-a-Wordpress-Theme/blob/main/Screenshot%202023-04-17%20142903.png )
+
