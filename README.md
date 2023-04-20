@@ -20,57 +20,26 @@
 ```
 ![](https://github.com/ssonyau/Creating-a-Wordpress-Theme/blob/main/Screenshot%202023-04-17%20140417.png)
 
-#### 4) У файл index.php додаємо код із простим змістом для теми з шапкою, підвалом, основним постом та сайдбаром.
+#### 4) У файл index.php ми підключимо всі файли нашої теми, і виведемо пости, щоб було цікавіше.
 #### Приклад кода: 
 ```
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <title>Мой блог</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-  <div id="header">
-    <div id="logo">
-      <a href="index.html"><img src="images/shapka.png" alt="" title=""/></a>
-    </div>
-    <ul id="menu">
-      <li><a href="#">Главная</a></li>
-      <li><a href="#">О нас</a></li>
-      <li><a href="#">Каталог товаров</a></li>
-      <li><a href="#">Контакты</a></li>
-    </ul>
-  </div>
-  <div id="content-main">
-    
-    <div id="content">
-      <div class="post-content">
-        <div class="post-img"><a href="#"><img width="275" height="230" src="images/mini.jpg" alt="Миниатюра поста"/></a></div>
-        <h1 class="note-title"><a href="#">Заголовок</a></h1>
-        <div class="post-text">Основной текст</div>
-        <div class="readmore"><a href="#">Читать далее</a></div>
-      </div>
-    </div>
- 
-    <div id="sidebar">
-      <div class="widget-title">Популярное на сайте</div>
-      <div class="widget">
-        <ul>
-          <li><a href="#">Новости</a></li>
-          <li><a href="#">Комментарии</a></li>
-          <li><a href="#">Отзывы</a></li>   
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div id="footer">
-    <p>Копирование информации запрещено</p>
-  </div> 
-</body>
-</html>
+<php? get_header(); ?>
+<main> 
+  <div class="content">
+<h1> Main Contents </h1>
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<hl> <?php the_title(); ?> </h1>
+<h4>Posted on <?php the_time ('F iS, Y') ?> </h4> 
+<p> <?php the_content (_('(more...)')) ; ?></p>
+<hr> <?php endwhile;else: ?>
+
+<p> <?php _e('Sorry, no posts'); ?></p> <?php endif; ?>
+</div>
+<?php get_sidebar(); ?> 
+</main> 
+<div class="delimetr"></div> 
+<?php get_fidebar(); 7>
 ```
-#### Також до цього файлу можна додавати будь-які елементи, які вам хотілося б бачити на сайті.
 
 #### 5) Далі розділяємо index.php на окремі файли. Файл index.php містить загальну інформацію про сайт. У ній прописані елементи, які повторюються для кожної сторінки. Для коректної роботи всього вмісту потрібно створити окремі файли для header.php, sidebar.php, footer.php. 
 
@@ -83,75 +52,66 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Мой блог</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <title>Document</title>
+  <link rel="stylesheet" href="<?php bloginfo('stylesheet_url');?>"/>
 </head>
 <body>
-<div id="header">
-    <div id="logo">
-      <a href="index.html"><img src="images/shapka.png" alt="" title=""/></a>
-    </div>
-    <ul id="menu">
-      <li><a href="#">Главная</a></li>
-      <li><a href="#">О нас</a></li>
-      <li><a href="#">Каталог товаров</a></li>
-      <li><a href="#">Контакты</a></li>
-    </ul>
-  </div>
+ <div class="wrapper">
+  <header>
+    <h1>Header</h1>
+  </header>
   ```
 #### Це повний вміст header.php. Такі ж дії потрібно зробити з іншими файлами.
 
-#### 7) Відкриваємо наш файл sidebar.php та прописуємо там наступні рядки:
+#### 7) Відкриваємо наш файл sidebar.php, у цьому файлі ми використовуємо внутрішні функції Wordpress для відображення категорій та архівів зображень. Функція повертає їх до елементів списку:
 ```
-<div id="sidebar">
-      <div class="widget-title">Популярное на сайте</div>
-      <div class="widget">
-        <ul>
-          <li><a href="#">Новости</a></li>
-          <li><a href="#">Комментарии</a></li>
-          <li><a href="#">Отзывы</a></li>   
-        </ul>
-      </div>
-    </div>
+<div class="sidebar">
+  <h2> <?php _e('Categories'); ?></h2>
+<ul> 
+ <?php wp_list_cats('sort_column=name&optioncount=1&hierarchial=0'); ?>
+</ul>
+ <h2> <?php _e('Archives'); ?></h2>
+  <ul>
+   <?php wp_get_archives('type-monthly'); ?>
+
+</ul>
+ </div>
  ```   
 #### 8) У файлі footer.php будуть такі рядки:
 ```
-<div id="footer">
-    <p>Копирование информации запрещено</p>
-  </div>
+<footer>
+    <h1>Footer</h1>
+</footer>
+</div>
+</body>
+</html>
  ``` 
 #### Їх можна доповнювати та редагувати на свій розсуд.
 
-#### 9) Далі, щоб шапка, sidebar.php та footer.php коректно відображалися, необхідно зв'язати їх окремі файли з основним (індексом). Для цього на початку файлу index.php потрібно додати рядок:
+#### 9) Тепер додамо небагато стилізації у нашу папку style.css:
 ```
-<?php get_header(); ?>
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    width: 100%;
+    background: yellow;
+    padding: 40px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    height: 70px;
+}
+
+footer{
+    background: blue;
+    padding: 40px;
+}
 ```
-#### А в кінці файлу ці рядки:
-```
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
-```
-#### В результаті після перенесення даних header.php, sidebar.php та footer.php залишиться така інформація:
-```
-<?php get_header(); ?>
-<div class="content-main">
-  <div class="content">
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    <div class="post-content">
-      <div class="post-img"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('full'); ?></a></div>
-      <h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-      <div class="post-text"><?php the_excerpt(); ?></div>
-      <div class="readmore"><a href="<?php the_permalink(); ?>">Читать далее</a></div>
-    </div>
-    <?php endwhile; ?>
-    <?php else: ?>
-    <?php endif; ?>
-  </div>
-  <?php get_sidebar(); ?>
-</div>
-<?php get_footer(); ?>
-```
-#### Все, що залишається після перенесення ділянок коду, є чистий файл index.php. За бажанням, можна створювати додаткові файли та розділи для відображення на сайті різної інформації.
 
 #### 10) Після цього переходимо назад до адмінки, і бачимо, що у нас з'явилася тема, яку ми щойно створили, після цього натискаємо на кнопку Активувати.
 
@@ -161,3 +121,6 @@
 
 ![](https://github.com/ssonyau/Creating-a-Wordpress-Theme/blob/main/Screenshot%202023-04-17%20142903.png )
 
+#### Ось такий простий сайт на Wordpress у нас виходить.
+
+![](https://github.com/ssonyau/)
