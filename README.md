@@ -76,7 +76,8 @@
 
 ![](https://github.com/ssonyau/Creating-a-Wordpress-Theme/blob/main/Screenshot%202023-04-20%20115125.png)
 
-#### 6) Далі у файл header.php потрібно виділити та скопіювати рядки, що стосуються заголовка з index.php.
+#### 6) Далі у файл header.php потрібно виділити та скопіювати рядки, що стосуються заголовка з index.php:
+
 ```
   <!DOCTYPE html>
 <html>
